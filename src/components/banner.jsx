@@ -30,7 +30,7 @@ const Banner = () => {
             <Typography variant="h4" fontFamily="monospace" color="primary.light">
               Hi my name is
             </Typography>
-            <Typography variant="h2" fontFamily="monospace" fontWeight="600" color="primary.light">
+            <Typography variant="h2" fontFamily="monospace" fontWeight="600" color="primary.light" sx={{ display: { xs: "none", sm: "block" } }}>
               <Typewriter
                 options={{
                   strings: ["Nana handre <br/>saputra"],
@@ -38,6 +38,10 @@ const Banner = () => {
                   loop: true,
                 }}
               />
+            </Typography>
+            <Typography variant="h2" fontFamily="monospace" fontWeight="600" color="primary.light" sx={{ display: { xs: "block", sm: "none" } }}>
+              Nana handre <br />
+              saputra
             </Typography>
             <Typography variant="p" fontSize="20px" fontFamily="monospace" color="primary.light">
               I'm junior web developer
