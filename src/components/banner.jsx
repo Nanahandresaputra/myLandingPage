@@ -8,7 +8,7 @@ const Banner = () => {
   useEffect(() => {
     AOS.init({
       duration: 1000,
-      // once: true,
+      once: true,
     });
   }, []);
   return (
