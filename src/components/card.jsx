@@ -35,21 +35,53 @@ const CardPortofolio = ({ idx }) => {
           }}
           id="text"
         >
-          <Typography variant="h2" fontWeight={800} color="warning.main" textAlign="center">
+          <Typography variant="h3" fontWeight={800} color="warning.main" textAlign="center">
             {idx.icon.icon1}
             {idx.icon.icon2}
             {idx.icon.icon3}
-            {idx.icon.icon4} <br />
+            {idx.icon.icon4}
+            {idx.icon.icon5} <br />
             <Container>
-              <Button
-                onClick={() => {
-                  window.open(idx.link.github, "_blank");
-                }}
-                variant="outlined"
-                color="warning"
-              >
-                Github
-              </Button>{" "}
+              {idx.link.github ? (
+                <Button
+                  onClick={() => {
+                    window.open(idx.link.github, "_blank");
+                  }}
+                  variant="outlined"
+                  color="warning"
+                >
+                  Github
+                </Button>
+              ) : null}{" "}
+              {idx.link.frontend && idx.link.backend ? (
+                <>
+                  <Button
+                    onClick={() => {
+                      window.open(idx.link.frontend, "_blank");
+                    }}
+                    variant="outlined"
+                    color="warning"
+                  >
+                    Github{" "}
+                    <Typography variant="p" sx={{ fontSize: "9px" }}>
+                      <i>(frontend)</i>
+                    </Typography>
+                  </Button>{" "}
+                  <Button
+                    onClick={() => {
+                      window.open(idx.link.backend, "_blank");
+                    }}
+                    variant="outlined"
+                    color="warning"
+                  >
+                    Github{" "}
+                    <Typography variant="p" sx={{ fontSize: "9px" }}>
+                      <i>(backend)</i>
+                    </Typography>
+                  </Button>
+                  {""}
+                </>
+              ) : null}{" "}
               {idx.link.demo ? (
                 <Button
                   onClick={() => {

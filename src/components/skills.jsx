@@ -2,6 +2,7 @@ import { Container, Grid, Paper, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { ImHtmlFive2 } from "react-icons/im";
 import { GrReactjs } from "react-icons/gr";
+import { DiSass } from "react-icons/di";
 import { SiMongodb, SiJavascript, SiCss3, SiBootstrap, SiNodedotjs, SiMui, SiExpress } from "react-icons/si";
 const Skills = () => {
   const reactIcon = [
@@ -26,6 +27,10 @@ const Skills = () => {
       title: "Bootstrap",
     },
     {
+      icon: <DiSass />,
+      title: "Sass",
+    },
+    {
       icon: <SiMui />,
       title: "Material UI",
     },
@@ -43,9 +48,9 @@ const Skills = () => {
     },
   ];
   return (
-    <Box sx={{ bgcolor: "#14191f" }} p="20px" id="Skills">
+    <Box sx={{ bgcolor: "#14191f" }} pt="15px" pb={{ xs: "10vh", sm: "20vh" }}>
       <Container>
-        <Typography color="primary.light" p="30px" variant="h4" fontWeight={650} fontFamily="monospace" data-aos="fade-right">
+        <Typography color="primary.light" p="30px" variant="h4" fontWeight={650} fontFamily="monospace" data-aos="fade-up">
           My skills
         </Typography>
       </Container>

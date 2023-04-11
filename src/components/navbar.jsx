@@ -5,7 +5,7 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 
 function Navbar() {
-  const pages = ["Skills", "Portofolio", "Contact"];
+  const pages = ["About Me", "Portofolio", "Contact"];
   return (
     <AppBar>
       <Container maxWidth="xl">
