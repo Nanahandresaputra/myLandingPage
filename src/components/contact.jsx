@@ -32,7 +32,7 @@ const Contact = () => {
     },
   ];
   return (
-    <Box sx={{ bgcolor: "#14191f", p: "40px 0" }} id="Contact">
+    <Box bgcolor="#14191f" p="40px 0" id="Contact">
       <Container data-aos="fade-up">
         <Typography variant="h4" color="primary.light" fontFamily="monospace" fontWeight={600}>
           Contact Me

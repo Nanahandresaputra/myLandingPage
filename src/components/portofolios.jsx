@@ -1,11 +1,13 @@
 import { Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import berita from "../../public/berita1.jpg";
-import store from "../../public/store.jpg";
-import listProduct from "../../public/listPorduct.jpg";
+import berita from "../assets/berita1.jpg";
+import store from "../assets/store.jpg";
+import listProduct from "../assets/listPorduct.jpg";
+import movies from "../assets/movies.jpg";
+
 import { GrReactjs } from "react-icons/gr";
 import { DiSass } from "react-icons/di";
-import { SiMongodb, SiNodedotjs, SiExpress, SiBootstrap } from "react-icons/si";
+import { SiMongodb, SiNodedotjs, SiExpress, SiBootstrap, SiMui } from "react-icons/si";
 import CardPortofolio from "./card";
 
 const Portofolios = () => {
@@ -22,6 +24,18 @@ const Portofolios = () => {
       },
       link: {
         github: "https://github.com/Nanahandresaputra/Eduwork-store.git",
+      },
+    },
+    {
+      name: "NETMOVIES",
+      img: movies,
+      icon: {
+        icon1: <GrReactjs />,
+        icon2: <SiMui />,
+      },
+      link: {
+        github: "https://github.com/Nanahandresaputra/net-movies.git",
+        demo: "https://net-movies.netlify.app/",
       },
     },
     {
@@ -62,7 +76,7 @@ const Portofolios = () => {
 
       <Grid container spacing={2} justifyContent="center" alignItems="center" data-aos="fade-up">
         {arr.map((idx, i) => (
-          <Grid item key={i} justifyContent="center" alignItems="center">
+          <Grid item key={i}>
             <CardPortofolio idx={idx} />
           </Grid>
         ))}

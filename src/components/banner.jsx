@@ -3,7 +3,7 @@ import Typewriter from "typewriter-effect";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import personal from "../../public/myPhoto.png";
+import personal from "../assets/myPhoto.png";
 const Banner = () => {
   useEffect(() => {
     AOS.init({
@@ -12,25 +12,14 @@ const Banner = () => {
     });
   }, []);
   return (
-    <Box sx={{ pt: { xs: "18vh", sm: "11vh" } }} bgcolor="#111827">
-      <Grid container spacing={0} sx={{ pb: "10vh", height: { sm: "auto", md: "90vh" } }} direction={{ xs: "column-reverse", sm: "row" }}>
-        <Grid
-          item
-          xs={12}
-          sm={6}
-          container
-          direction="column"
-          textAlign={{ xs: "center", sm: "start" }}
-          justifyContent="center"
-          alignItems={{ xs: "center", sm: "end", md: "center" }}
-          sx={{ pt: { xs: "3vh", sm: "0" } }}
-          data-aos="fade-right"
-        >
+    <Box pt={{ xs: "18vh", sm: "11vh" }} bgcolor="#111827">
+      <Grid container spacing={0} pb="10vh" height={{ sm: "auto", md: "90vh" }} direction={{ xs: "column-reverse", sm: "row" }}>
+        <Grid item xs={12} sm={6} container direction="column" align={{ xs: "center", sm: "start" }} justifyContent="center" alignItems={{ xs: "center", sm: "end", md: "center" }} pt={{ xs: "3vh", sm: "0" }} data-aos="fade-right">
           <Box>
             <Typography variant="h4" fontFamily="monospace" color="primary.light">
               Hi my name is
             </Typography>
-            <Typography variant="h2" fontFamily="monospace" fontWeight="600" color="primary.light" sx={{ display: { xs: "none", sm: "block" } }}>
+            <Typography variant="h2" fontFamily="monospace" fontWeight="600" color="primary.light" display={{ xs: "none", sm: "block" }}>
               <Typewriter
                 options={{
                   strings: ["Nana handre <br/>saputra"],
@@ -39,7 +28,7 @@ const Banner = () => {
                 }}
               />
             </Typography>
-            <Typography variant="h2" fontFamily="monospace" fontWeight="600" color="primary.light" sx={{ display: { xs: "block", sm: "none" } }}>
+            <Typography variant="h2" fontFamily="monospace" fontWeight="600" color="primary.light" display={{ xs: "block", sm: "none" }}>
               Nana handre <br />
               saputra
             </Typography>

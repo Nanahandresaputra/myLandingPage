@@ -36,11 +36,7 @@ const CardPortofolio = ({ idx }) => {
           id="text"
         >
           <Typography variant="h3" fontWeight={800} color="warning.main" textAlign="center">
-            {idx.icon.icon1}
-            {idx.icon.icon2}
-            {idx.icon.icon3}
-            {idx.icon.icon4}
-            {idx.icon.icon5} <br />
+            {idx.icon.icon1} {idx.icon.icon2} {idx.icon.icon3} {idx.icon.icon4} {idx.icon.icon5} <br />
             <Container>
               {idx.link.github ? (
                 <Button
