@@ -63,7 +63,7 @@ const Portofolios = () => {
       link: {
         frontend: "https://github.com/Nanahandresaputra/CRUD-product-list-frontend.git",
         backend: "https://github.com/Nanahandresaputra/CRUD-product-list-Backend.git",
-        demo: "https://product-list-app.up.railway.app/",
+        demo: "https://list-products-client.vercel.app/",
       },
     },
   ];
