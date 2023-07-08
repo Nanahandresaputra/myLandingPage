@@ -1,8 +1,7 @@
 import { Container, Grid, Paper, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { GrReactjs } from "react-icons/gr";
-import { DiSass } from "react-icons/di";
-import { SiMongodb, SiJavascript, SiCss3, SiBootstrap, SiNodedotjs, SiMui, SiExpress } from "react-icons/si";
+import { SiMongodb, SiJavascript, SiCss3, SiBootstrap, SiNodedotjs, SiMui, SiExpress, SiTailwindcss } from "react-icons/si";
 import { ImHtmlFive2 } from "react-icons/im";
 
 const Skills = () => {
@@ -28,8 +27,8 @@ const Skills = () => {
       title: "Bootstrap",
     },
     {
-      icon: <DiSass />,
-      title: "Sass",
+      icon: <SiTailwindcss />,
+      title: "Tailwind",
     },
     {
       icon: <SiMui />,

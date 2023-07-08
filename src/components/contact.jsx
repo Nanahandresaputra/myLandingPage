@@ -22,8 +22,8 @@ const Contact = () => {
     },
     {
       icon: <TfiEmail />,
-      title: "nanaggmu@gmail.com",
-      link: "https://mail.google.com/mail/?view=cm&fs=1&to=nanaggmu@gmail.com",
+      title: "nana20.jobs@gmail.com",
+      link: "https://mail.google.com/mail/?view=cm&fs=1&to=nana20.jobs@gmail.com",
     },
     {
       icon: <BsWhatsapp />,
