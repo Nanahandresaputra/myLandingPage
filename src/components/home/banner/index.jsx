@@ -1,11 +1,14 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../../../layout";
-import TypewriterView from "./typewriter";
+import { TypewriterText } from "../../utils/typewriter";
+import AuroraView from "../../utils/aurora-text";
+import { nnprofile } from "../../../assets";
+import { IoMdDownload } from "react-icons/io";
 
 const HomeBanner = () => {
   const { theme } = useContext(GlobalContext);
   return (
-    <div className="min-h-screen w-full relative pt-14 bg-white dark:bg-transparent">
+    <div className="min-h-[90vh] w-full relative pt-14 bg-white dark:bg-transparent">
       <div
         className="absolute inset-0 z-0"
         style={{
@@ -33,10 +36,24 @@ const HomeBanner = () => {
               }),
         }}
       />
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 max-w-7xl relative z-10 grid grid-cols-2">
-        <div className="col-span-1">
-          <p className="font-mono">Hi my name is</p>
-          <TypewriterView />
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 max-w-7xl relative z-10 grid grid-cols-1 md:grid-cols-2 items-center gap-y-8 md:gap-y-0">
+        <div className="col-span-1 order-last md:order-first flex flex-col justify-center space-y-3 md:space-y-5">
+          <div>
+            <p className="font-mono text-black dark:text-white text-xs lg:text-xl">Hi my name is</p>
+            <TypewriterText text="Nana Handre Saputra" className="text-2xl lg:text-5xl" />
+          </div>
+          <AuroraView className=" text-4xl font-bold lg:text-6xl" text="Software Developer" />
+          <p className="font-mono text-black/60 dark:text-white/60 text-justify text-sm md:text-base">
+            I am passionate about IT and programming, focusing on web and mobile development. I enjoy building modern, interactive, and user-friendly applications while continuously learning to stay updated with the latest technologies and
+            deliver the best digital solutions.
+          </p>
+          <button type="button" className="bg-white p-2 flex items-center space-x-2 text-black w-40 rounded-md justify-center font-mono hover:cursor-pointer hover:bg-white/90 transition-all">
+            <IoMdDownload className="text-xl" />
+            <span>Download CV</span>
+          </button>
+        </div>
+        <div className="col-span-1 order-first md:order-last flex justify-center md:justify-end items-center">
+          <img src={nnprofile} alt="profile" className="w-56 h-56 md:w-64 md:h-64 lg:w-10/12 lg:h-full" />
         </div>
       </div>
     </div>
