@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-export const TypewriterText = ({ text = "Nana Handre Saputra", speed = 100, deleteSpeed = 50, pauseDuration = 2000, loop = true, className = "", showCursor = true }) => {
+export const TypewriterText = ({
+  text = "Nana Handre Saputra",
+  speed = 100,
+  deleteSpeed = 50,
+  pauseDuration = 2000,
+  loop = true,
+  className = "",
+  showCursor = true,
+}) => {
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
@@ -31,9 +39,18 @@ export const TypewriterText = ({ text = "Nana Handre Saputra", speed = 100, dele
       }
     }
     return () => clearTimeout(timeout);
-  }, [displayText, isDeleting, isPaused, text, speed, deleteSpeed, pauseDuration, loop]);
+  }, [
+    displayText,
+    isDeleting,
+    isPaused,
+    text,
+    speed,
+    deleteSpeed,
+    pauseDuration,
+    loop,
+  ]);
   return (
-    <div className={`font-mono ${className}`}>
+    <div className={` ${className}`}>
       <span className=" font-bold text-slate-800 dark:text-slate-200">
         {displayText}
         {showCursor && (
