@@ -35,7 +35,7 @@ const AboutMe = () => {
               }),
         }}
       />
-      <div className="container py-[10vh] md:py-0 lg:py-[10vh] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 max-w-7xl relative z-10 space-y-6 md:space-y-12 ">
+      <div className="container py-[10vh] md:py-0 lg:py-[10vh] 2xl:py-0 mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 max-w-7xl relative z-10 space-y-6 md:space-y-12 ">
         <div className="space-y-6 md:space-y-12 h-full">
           <p className="text-black dark:text-white font-bold text-3xl lg:text-5xl">
             About Me
