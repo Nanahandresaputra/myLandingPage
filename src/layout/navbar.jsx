@@ -68,12 +68,12 @@ const Navbar = () => {
             <a href="#" className="flex items-center space-x-2 group">
               <div className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 bg-gray-900 dark:bg-gray-50 rounded-full flex items-center justify-center transition-transform group-hover:scale-110">
                 <span className="text-white dark:text-gray-900 font-bold text-base sm:text-lg lg:text-xl">
-                  S
+                  N
                 </span>
               </div>
-              <span className="font-bold text-lg sm:text-xl lg:text-2xl text-gray-900 dark:text-gray-100">
-                Sera UI
-              </span>
+              {/* <span className="font-bold text-lg sm:text-xl lg:text-2xl text-gray-900 dark:text-gray-100">
+                Nn Dev
+              </span> */}
             </a>
           </div>
 

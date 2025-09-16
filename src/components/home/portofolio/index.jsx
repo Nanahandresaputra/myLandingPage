@@ -31,11 +31,11 @@ const Portofolio = () => {
               }),
         }}
       />
-      <div className="container py-[10vh] md:py-0 lg:py-[10vh] 2xl:py-0 mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 max-w-7xl relative z-10 space-y-12">
+      <div className="container py-[10vh] 2xl:py-0 mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 max-w-7xl relative z-10 space-y-12">
         <p className="text-black dark:text-white font-bold text-3xl lg:text-5xl">
           Portofolios
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {[...new Array(6)].map((_, idx) => (
             <PortoCard key={idx} />
           ))}

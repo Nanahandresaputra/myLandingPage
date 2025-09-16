@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from "react";
 import Navbar from "./navbar";
 import { Outlet } from "react-router-dom";
+import Footer from "./footer";
 
 export const GlobalContext = createContext({});
 
@@ -26,6 +27,7 @@ const Layout = () => {
       <section>
         <Navbar />
         <Outlet />
+        <Footer />
       </section>
     </GlobalContext.Provider>
   );
