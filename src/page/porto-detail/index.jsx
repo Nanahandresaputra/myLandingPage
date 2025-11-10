@@ -26,73 +26,73 @@ const PortoDetailPage = () => {
   const techStackData = [
     {
       icon: (
-        <SiJavascript className="dark:text-white/70 text-black/70 text-xl lg:text-4xl" />
+        <SiJavascript className="dark:text-white/70 text-black/70 text-3xl lg:text-4xl" />
       ),
       label: "Javascript",
     },
     {
       icon: (
-        <SiTypescript className="dark:text-white/70 text-black/70 text-xl lg:text-4xl" />
+        <SiTypescript className="dark:text-white/70 text-black/70 text-3xl lg:text-4xl" />
       ),
       label: "Typescript",
     },
     {
       icon: (
-        <FaDartLang className="dark:text-white/70 text-black/70 text-xl lg:text-4xl" />
+        <FaDartLang className="dark:text-white/70 text-black/70 text-3xl lg:text-4xl" />
       ),
       label: "Dart",
     },
     {
       icon: (
-        <RiTailwindCssFill className="dark:text-white/70 text-black/70 text-xl lg:text-4xl" />
+        <RiTailwindCssFill className="dark:text-white/70 text-black/70 text-3xl lg:text-4xl" />
       ),
       label: "Tailwindcss",
     },
     {
       icon: (
-        <GrReactjs className="dark:text-white/70 text-black/70 text-xl lg:text-4xl" />
+        <GrReactjs className="dark:text-white/70 text-black/70 text-3xl lg:text-4xl" />
       ),
-      label: "React",
+      label: "React.js",
     },
     {
       icon: (
-        <SiNextdotjs className="dark:text-white/70 text-black/70 text-xl lg:text-4xl" />
+        <SiNextdotjs className="dark:text-white/70 text-black/70 text-3xl lg:text-4xl" />
       ),
       label: "Next.js",
     },
     {
       icon: (
-        <SiAntdesign className="dark:text-white/70 text-black/70 text-xl lg:text-4xl" />
+        <SiAntdesign className="dark:text-white/70 text-black/70 text-3xl lg:text-4xl" />
       ),
       label: "Ant Design",
     },
     {
       icon: (
-        <FaNodeJs className="dark:text-white/70 text-black/70 text-xl lg:text-4xl" />
+        <FaNodeJs className="dark:text-white/70 text-black/70 text-3xl lg:text-4xl" />
       ),
       label: "Node.js",
     },
     {
       icon: (
-        <SiExpress className="dark:text-white/70 text-black/70 text-xl lg:text-4xl" />
+        <SiExpress className="dark:text-white/70 text-black/70 text-3xl lg:text-4xl" />
       ),
       label: "Express.js",
     },
     {
       icon: (
-        <SiNestjs className="dark:text-white/70 text-black/70 text-xl lg:text-4xl" />
+        <SiNestjs className="dark:text-white/70 text-black/70 text-3xl lg:text-4xl" />
       ),
       label: "Nest.js",
     },
     {
       icon: (
-        <BiLogoPostgresql className="dark:text-white/70 text-black/70 text-xl lg:text-4xl" />
+        <BiLogoPostgresql className="dark:text-white/70 text-black/70 text-3xl lg:text-4xl" />
       ),
       label: "Postgresql",
     },
     {
       icon: (
-        <FaFlutter className="dark:text-white/70 text-black/70 text-xl lg:text-4xl" />
+        <FaFlutter className="dark:text-white/70 text-black/70 text-3xl lg:text-4xl" />
       ),
       label: "Flutter",
     },
@@ -105,7 +105,7 @@ const PortoDetailPage = () => {
   }, []);
 
   return (
-    <section className="min-h-screen py-[10vh] w-full bg-white dark:bg-[#020617] relative flex flex-col justify-center">
+    <section className="min-h-screen md:py-[10vh] w-full bg-white dark:bg-[#020617] relative flex flex-col justify-center">
       <div
         className="absolute inset-0 z-0"
         style={{
@@ -135,7 +135,9 @@ const PortoDetailPage = () => {
       />
       <div className="container py-[10vh] 2xl:py-0 mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 max-w-7xl relative z-10 space-y-12">
         <div className="space-y-5">
-          <p className={`text-black dark:text-white font-semibold text-5xl`}>
+          <p
+            className={`text-black dark:text-white font-semibold text-4xl md:text-5xl`}
+          >
             {state.title}
           </p>
           <div className="flex space-x-5">
@@ -156,7 +158,14 @@ const PortoDetailPage = () => {
           </div>
         </div>
         <Swiper
-          slidesPerView={state.isMobile ? 4 : 1}
+          breakpoints={{
+            320: {
+              slidesPerView: state.isMobile ? 2 : 1,
+            },
+            768: {
+              slidesPerView: state.isMobile ? 4 : 1,
+            },
+          }}
           spaceBetween={20}
           //   centeredSlides={true}
           //   loop={true}
@@ -168,13 +177,13 @@ const PortoDetailPage = () => {
         >
           {state.images.map((data, index) => (
             <SwiperSlide className="w-full" key={index}>
-              <img src={data} className="min-h-[40vh]" key={index} />
+              <img src={data} className="h-full md:min-h-[40vh]" key={index} />
             </SwiperSlide>
           ))}
         </Swiper>
 
         <div className="space-y-4">
-          <p className="text-black/70 dark:text-white/70 text-3xl font-semibold">
+          <p className="text-black/70 dark:text-white/70 text-2xl md:text-3xl font-semibold">
             Tech Stack
           </p>
           <div className="flex items-center space-x-5">
@@ -183,7 +192,7 @@ const PortoDetailPage = () => {
               .map((data) => (
                 <div className="flex flex-col items-center space-y-3">
                   {data.icon}
-                  <p className="text-black/70 dark:text-white/70">
+                  <p className="text-sm md:text-base text-black/70 dark:text-white/70">
                     {data.label}
                   </p>
                 </div>
@@ -192,10 +201,10 @@ const PortoDetailPage = () => {
         </div>
 
         <div className="space-y-3">
-          <p className="text-black/70 dark:text-white/70 text-3xl font-semibold">
+          <p className="text-black/70 dark:text-white/70 text-2xl md:text-3xl font-semibold">
             Description
           </p>
-          <p className="text-black/70 dark:text-white/70 text-justify">
+          <p className="text-black/70 dark:text-white/70 text-justify text-sm md:text-base ">
             {state.description}
           </p>
         </div>
