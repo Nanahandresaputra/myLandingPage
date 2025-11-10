@@ -1,14 +1,4 @@
-import {
-  bannerGoe,
-  bannerRadioStream,
-  compProAssets,
-  fquizAssets,
-  gameBaseAssets,
-  goeAppAssets,
-  netmoviesAssets,
-  nnNextAiAssets,
-  radioStreamAssets,
-} from "../assets";
+import { bannerGoe, bannerRadioStream, compProAssets, fquizAssets, gameBaseAssets, goeApiAssets, goeAppAssets, netmoviesAssets, nnNextAiAssets, radioStreamAssets } from "../assets";
 
 export const portoListData = [
   {
@@ -67,5 +57,12 @@ export const portoListData = [
     title: "GameBase",
     stack: ["Typescript", "Next.js", "Tailwindcss"],
     description: `GameBase adalah proyek aplikasi web yang berfungsi sebagai portal informasi dan ulasan komprehensif di dunia gaming, menampilkan desain dark mode yang premium dan profesional. Aplikasi ini dibangun untuk menyajikan tiga fungsi utama: Katalog Game, Berita dan Ulasan, dan Informasi Perusahaan. Secara teknis, website ini menunjukkan kemampuan dalam menangani dan memvisualisasikan data game yang ekstensif, menampilkan daftar game yang dapat difilter berdasarkan berbagai kategori (Action, RPG, Strategy, dll.) serta halaman detail game yang kaya media, mencakup sinopsis, rating, genre, platform rilis, dan trailer video. Selain itu, proyek ini memiliki modul berita dan ulasan yang terpisah, memungkinkan pengguna untuk tetap up-to-date dengan artikel dan review game terbaru yang terstruktur, lengkap dengan halaman artikel individual yang menampilkan teks, gambar, dan konten video yang relevan. Aplikasi ini secara efektif mendemonstrasikan keahlian dalam integrasi API data eksternal, implementasi fitur pencarian dan pemfilteran, dan pembuatan content management system (CMS) front-end yang elegan dan informatif.`,
+  },
+  {
+    banner: goeApiAssets[0],
+    images: goeApiAssets,
+    title: "GoEventID API",
+    stack: ["Nest.js", "Postgresql"],
+    description: `API layanan backend GoEventID, sistem pemesanan tiket acara berbasis web dan mobile. API menyediakan berbagai endpoint untuk autentikasi pengguna, manajemen event, pemesanan tiket, pembayaran melalui Midtrans, serta check-in menggunakan QR Code. Setiap endpoint menggunakan format RESTful dengan autentikasi JWT dan pertukaran data dalam format JSON. API ini dirancang agar dapat digunakan oleh aplikasi mobile Flutter dan dashboard admin Next.js untuk mendukung seluruh proses manajemen dan transaksi tiket acara.`,
   },
 ];
