@@ -1,12 +1,13 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../../../layout";
 import PortoCard from "./porto-card";
+import { portoListData } from "../../../data/porto-list";
 
 const Portofolio = () => {
   const { theme } = useContext(GlobalContext);
 
   return (
-    <section className="min-h-screen w-full bg-white dark:bg-[#020617] relative flex flex-col justify-center">
+    <section className="min-h-screen py-[5vh] w-full bg-white dark:bg-[#020617] relative flex flex-col justify-center">
       <div
         className="absolute inset-0 z-0"
         style={{
@@ -36,9 +37,12 @@ const Portofolio = () => {
           Portofolios
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {[...new Array(6)].map((_, idx) => (
-            <PortoCard key={idx} />
+          {portoListData.map((data, index) => (
+            <PortoCard key={index} data={data} />
           ))}
+          {/* {[...new Array(6)].map((_, idx) => (
+            <PortoCard key={idx} />
+          ))} */}
         </div>
       </div>
     </section>
