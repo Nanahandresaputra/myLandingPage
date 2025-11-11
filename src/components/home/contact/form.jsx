@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import InputText from "./input-form";
 import TextArea from "./textarea-form";
 import emailjs from "@emailjs/browser";
@@ -17,6 +17,15 @@ const FormContact = () => {
   const form = useRef();
   const [isLoadingSubmit, setIsLoadingSubmit] = useState(false);
   const [errMssgEmail, setErrMssgEmail] = useState(null);
+  const [successMssgEmail, setSuccessMssgEmail] = useState(null);
+
+  useEffect(() => {
+    if (successMssgEmail !== null) {
+      setTimeout(() => {
+        setSuccessMssgEmail(null);
+      }, 5000);
+    }
+  }, [successMssgEmail]);
   return (
     <Formik
       initialValues={{
@@ -38,6 +47,7 @@ const FormContact = () => {
               () => {
                 setIsLoadingSubmit(false);
                 setErrMssgEmail(null);
+                setSuccessMssgEmail("The message has been sent.");
                 resetForm();
               },
               (error) => {
@@ -50,7 +60,7 @@ const FormContact = () => {
       }}
     >
       {({ handleSubmit, values }) => (
-        <form ref={form} onSubmit={handleSubmit}>
+        <form ref={form} onSubmit={handleSubmit} autoComplete="off">
           <Field name="name" placeholder="Fullname" component={InputText} />
           <Field name="email" placeholder="Email" component={InputText} />
           <Field name="subject" placeholder="Subject" component={InputText} />
@@ -61,6 +71,9 @@ const FormContact = () => {
             component={TextArea}
           />
           {errMssgEmail && <span className="text-red-500">{errMssgEmail}</span>}
+          {successMssgEmail && (
+            <span className="text-green-500">{successMssgEmail}</span>
+          )}
           <button
             type="submit"
             disabled={isLoadingSubmit}
@@ -74,21 +87,6 @@ const FormContact = () => {
     </Formik>
   );
 };
-
-{
-  /* <form ref={form} onSubmit={(e) => submitEmail(e)} className="space-y-4">
-  <InputText type="text" name="name" placeholder="Fullname" />
-  <InputText type="email" name="email" placeholder="Email" />
-  <InputText type="text" name="subject" placeholder="Subject" />
-  <TextArea name={"message"} placeholder={"Message..."} />
-  <button
-    type="submit"
-    className="text-white bg-blue-600 hover:bg-blue-700 rounded-md text-sm font-medium px-4 py-2.5 w-full cursor-pointer border-0 mt-2"
-  >
-    Send message
-  </button>
-</form>; */
-}
 
 export default FormContact;
 
