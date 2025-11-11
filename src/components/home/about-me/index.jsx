@@ -7,7 +7,10 @@ const AboutMe = () => {
   const { theme } = useContext(GlobalContext);
 
   return (
-    <section className="min-h-[92vh] w-full relative bg-[#f8fafc] dark:bg-transparent flex flex-col items-center justify-center">
+    <section
+      className="min-h-[92vh] w-full relative bg-[#f8fafc] dark:bg-transparent flex flex-col items-center justify-center"
+      id="About Me"
+    >
       <div
         className="absolute inset-0 z-0"
         style={{

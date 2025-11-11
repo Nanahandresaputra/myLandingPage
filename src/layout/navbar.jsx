@@ -4,11 +4,48 @@ import { IoMoonOutline } from "react-icons/io5";
 import { LuSunMedium } from "react-icons/lu";
 import { MdClose } from "react-icons/md";
 import { GlobalContext } from ".";
+import { useLocation, useNavigate } from "react-router-dom";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  // const [current, setCurrent] = useState("home");
 
   const { theme, setTheme } = useContext(GlobalContext);
+
+  const location = useLocation();
+
+  const navigate = useNavigate();
+
+  const handleScroll = (e) => {
+    navigate("/");
+    if (location.pathname === "/") {
+      // setCurrent(e.key);
+      const element = document.getElementById(e);
+      const headerOffset = 90;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    } else {
+      setTimeout(() => {
+        // setCurrent(e.key);
+        const element = document.getElementById(e);
+        const headerOffset = 90;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition =
+          elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }, 500);
+    }
+  };
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -25,7 +62,6 @@ const Navbar = () => {
     setTheme((prev) => (prev === "dark" ? "light" : "dark"));
   };
 
-  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -34,7 +70,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close menu when screen size changes
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
@@ -45,13 +80,7 @@ const Navbar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const navLinks = [
-    { href: "#work", text: "Work" },
-    { href: "#about", text: "About" },
-    { href: "#services", text: "Services" },
-    { href: "#blog", text: "Blog" },
-    { href: "#contact", text: "Contact" },
-  ];
+  const navLinks = ["Home", "About Me", "Portofolios", "Contact"];
 
   return (
     <header
@@ -79,13 +108,13 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-4 lg:space-x-6 xl:space-x-8">
-            {navLinks.map((link) => (
+            {navLinks.map((text) => (
               <a
-                key={link.text}
-                href={link.href}
-                className="text-sm lg:text-base font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors relative group"
+                key={text}
+                onClick={() => handleScroll(text)}
+                className="text-sm hover:cursor-pointer lg:text-base font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors relative group"
               >
-                {link.text}
+                {text}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gray-900 dark:bg-gray-100 transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
@@ -128,14 +157,16 @@ const Navbar = () => {
         >
           <div className="py-4 border-t border-gray-200 dark:border-gray-800">
             <div className="flex flex-col space-y-1">
-              {navLinks.map((link) => (
+              {navLinks.map((text) => (
                 <a
-                  key={link.text}
-                  href={link.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="px-3 py-2.5 text-sm sm:text-base font-medium text-gray-600 dark:text-gray-300 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                  key={text}
+                  onClick={() => {
+                    handleScroll(text);
+                    setIsMenuOpen(false);
+                  }}
+                  className="px-3 py-2.5 hover:cursor-pointer text-sm sm:text-base font-medium text-gray-600 dark:text-gray-300 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                 >
-                  {link.text}
+                  {text}
                 </a>
               ))}
               <div className="pt-4 mt-2 border-t border-gray-200 dark:border-gray-700 flex flex-col space-y-2">

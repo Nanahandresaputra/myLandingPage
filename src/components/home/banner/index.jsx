@@ -8,7 +8,10 @@ import { IoMdDownload } from "react-icons/io";
 const HomeBanner = () => {
   const { theme } = useContext(GlobalContext);
   return (
-    <div className="min-h-[92vh] overflow-hidden w-full relative flex flex-col justify-center bg-white dark:bg-transparent">
+    <div
+      className="min-h-[92vh] overflow-hidden w-full relative flex flex-col justify-center bg-white dark:bg-transparent"
+      id="Home"
+    >
       <div
         className="absolute inset-0 z-0"
         style={{

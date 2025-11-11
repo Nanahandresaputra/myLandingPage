@@ -100,6 +100,10 @@ const PortoDetailPage = () => {
 
   const { state } = useLocation();
 
+  const handleOpenInNewTab = (path) => {
+    window.open(path, "_blank");
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -142,6 +146,7 @@ const PortoDetailPage = () => {
           </p>
           <div className="flex space-x-5">
             <button
+              onClick={() => handleOpenInNewTab(state.link)}
               type="button"
               className="bg-neutral-600 dark:bg-white p-2 flex items-center justify-center space-x-2 text-white/80 dark:text-black w-32 rounded-md  hover:cursor-pointer dark:hover:bg-white/90 hover:bg-neutral-500/70 transition-all"
             >
@@ -149,6 +154,7 @@ const PortoDetailPage = () => {
               <span className=" font-semibold">Link</span>
             </button>
             <button
+              onClick={() => handleOpenInNewTab(state.github)}
               type="button"
               className="p-2 flex items-center justify-center space-x-2 dark:text-white text-black w-32 rounded-md border border-black/70 dark:border-white  hover:cursor-pointer hover:shadow-md  dark:hover:shadow-white/40 transition-all"
             >

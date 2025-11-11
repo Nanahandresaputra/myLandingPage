@@ -7,7 +7,10 @@ const Portofolio = () => {
   const { theme } = useContext(GlobalContext);
 
   return (
-    <section className="min-h-screen py-[5vh] w-full bg-white dark:bg-[#020617] relative flex flex-col justify-center">
+    <section
+      className="min-h-screen py-[5vh] w-full bg-white dark:bg-[#020617] relative flex flex-col justify-center"
+      id="Portofolios"
+    >
       <div
         className="absolute inset-0 z-0"
         style={{
