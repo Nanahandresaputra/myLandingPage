@@ -9,10 +9,7 @@ const AboutMe = () => {
   const { t } = useTranslation();
 
   return (
-    <section
-      className="min-h-[92vh] w-full relative bg-[#f8fafc] dark:bg-transparent flex flex-col items-center justify-center"
-      id="About Me"
-    >
+    <section className="min-h-[92vh] w-full relative bg-[#f8fafc] dark:bg-transparent flex flex-col items-center justify-center" id="About Me">
       <div
         className="absolute inset-0 z-0"
         style={{
@@ -42,20 +39,14 @@ const AboutMe = () => {
       />
       <div className="container py-[10vh] md:py-0 lg:py-[10vh] 2xl:py-0 mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 max-w-7xl relative z-10 space-y-6 md:space-y-12 ">
         <div className="space-y-6 md:space-y-12 h-full">
-          <p className="text-black dark:text-white font-bold text-3xl lg:text-5xl">
-            {t("navLink.aboutMe")}
-          </p>
+          <p className="text-black dark:text-white font-bold text-3xl lg:text-5xl">{t("navLink.aboutMe")}</p>
           <div className="flex space-x-8">
             <div className="w-20 bg-blue-500 hidden md:block" />
-            <p className="text-black/70 dark:text-white/60 text-justify  lg:text-lg font-semibold">
-              {t("aboutMe.description")}
-            </p>
+            <p className="text-black/70 dark:text-white/60 text-sm  lg:text-lg">{t("aboutMe.description")}</p>
           </div>
         </div>
         <div className="space-y-6 md:space-y-12">
-          <p className="text-black dark:text-white font-bold text-3xl lg:text-5xl">
-            {t("techStack.title")}
-          </p>
+          <p className="text-black dark:text-white font-bold text-3xl lg:text-5xl">{t("techStack.title")}</p>
           <SkillsCard />
         </div>
       </div>
