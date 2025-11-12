@@ -59,13 +59,13 @@ const HomeBanner = () => {
           <p className=" text-black/60 dark:text-white/60 text-justify text-sm md:text-xl">
             {t("banner.description")}
           </p>
-          <button
+          {/* <button
             type="button"
             className="bg-white p-2 flex items-center space-x-2 text-black w-40 rounded-md justify-center  hover:cursor-pointer hover:bg-white/90 transition-all"
           >
             <IoMdDownload className="text-xl" />
             <span>Download CV</span>
-          </button>
+          </button> */}
         </div>
         <div className="col-span-1 order-first md:order-last flex justify-center md:justify-end items-center">
           <img
