@@ -5,15 +5,25 @@ import emailjs from "@emailjs/browser";
 import * as Yup from "yup";
 import { Field, Form, Formik } from "formik";
 import Spinner from "../../utils/spin/loading-spinner";
-
-const sendEmailSchema = Yup.object().shape({
-  name: Yup.string().required("Fullname required!"),
-  email: Yup.string().email().required("Email required!"),
-  subject: Yup.string().required("Subject required!"),
-  message: Yup.string().required("Message required!"),
-});
+import { useTranslation } from "react-i18next";
 
 const FormContact = () => {
+  const { t } = useTranslation();
+  const sendEmailSchema = Yup.object().shape({
+    name: Yup.string().required(
+      t("contact.form.validationMessage.fullnameRequired")
+    ),
+    email: Yup.string()
+      .email(t("contact.form.validationMessage.emailValid"))
+      .required(t("contact.form.validationMessage.emailRequired")),
+    subject: Yup.string().required(
+      t("contact.form.validationMessage.subjectRequired")
+    ),
+    message: Yup.string().required(
+      t("contact.form.validationMessage.messageRequired")
+    ),
+  });
+  //  {t('contact.lets')}
   const form = useRef();
   const [isLoadingSubmit, setIsLoadingSubmit] = useState(false);
   const [errMssgEmail, setErrMssgEmail] = useState(null);
@@ -34,6 +44,8 @@ const FormContact = () => {
         email: "",
         message: "",
       }}
+      validateOnChange={false}
+      validateOnBlur={false}
       validationSchema={sendEmailSchema}
       onSubmit={(values, { resetForm }) => {
         if (values) {
@@ -47,7 +59,7 @@ const FormContact = () => {
               () => {
                 setIsLoadingSubmit(false);
                 setErrMssgEmail(null);
-                setSuccessMssgEmail("The message has been sent.");
+                setSuccessMssgEmail(t("contact.form.emailSent"));
                 resetForm();
               },
               (error) => {
@@ -61,12 +73,20 @@ const FormContact = () => {
     >
       {({ handleSubmit, values }) => (
         <form ref={form} onSubmit={handleSubmit} autoComplete="off">
-          <Field name="name" placeholder="Fullname" component={InputText} />
-          <Field name="email" placeholder="Email" component={InputText} />
-          <Field name="subject" placeholder="Subject" component={InputText} />
+          <Field
+            name="name"
+            placeholder={t("contact.form.placeholder.fullname")}
+            component={InputText}
+          />
+          <Field name="email" placeholder={"Email"} component={InputText} />
+          <Field
+            name="subject"
+            placeholder={t("contact.form.placeholder.subject")}
+            component={InputText}
+          />
           <Field
             name="message"
-            placeholder="Message"
+            placeholder={t("contact.form.placeholder.message")}
             as="textarea"
             component={TextArea}
           />
@@ -80,7 +100,7 @@ const FormContact = () => {
             className="text-white flex justify-center items-center space-x-2 bg-blue-600 hover:bg-blue-700 rounded-md text-sm font-medium px-4 py-2.5 w-full cursor-pointer border-0 mt-2"
           >
             {isLoadingSubmit && <Spinner />}
-            <span>Send message</span>
+            <span>{t("contact.form.placeholder.btnText")}</span>
           </button>
         </form>
       )}

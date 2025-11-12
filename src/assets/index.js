@@ -12,6 +12,8 @@ import { gameBaseAssets } from "./porto-list/gameBase";
 import { goeApiAssets } from "./porto-list/goEventIdApi";
 import darkBg from "./dark-bg.png";
 import lightBg from "./light-bg.png";
+import idImg from "./id.png";
+import enImg from "./en.png";
 
 export {
   nnprofile,
@@ -27,4 +29,6 @@ export {
   goeApiAssets,
   darkBg,
   lightBg,
+  enImg,
+  idImg,
 };

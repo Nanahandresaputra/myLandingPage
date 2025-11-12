@@ -4,9 +4,11 @@ import { TypewriterText } from "../../utils/typewriter";
 import AuroraView from "../../utils/aurora-text";
 import { nnprofile } from "../../../assets";
 import { IoMdDownload } from "react-icons/io";
+import { useTranslation } from "react-i18next";
 
 const HomeBanner = () => {
   const { theme } = useContext(GlobalContext);
+  const { t } = useTranslation();
   return (
     <div
       className="min-h-[92vh] overflow-hidden w-full relative flex flex-col justify-center bg-white dark:bg-transparent"
@@ -43,7 +45,7 @@ const HomeBanner = () => {
         <div className="col-span-1 order-last md:order-first flex flex-col justify-center space-y-3 md:space-y-8">
           <div>
             <p className=" text-black dark:text-white text-xs lg:text-xl">
-              Hi my name is
+              {t("banner.hiText")}
             </p>
             <TypewriterText
               text="Nana Handre Saputra"
@@ -59,8 +61,7 @@ const HomeBanner = () => {
             development. I enjoy building modern, interactive, and user-friendly
             applications while continuously learning to stay updated with the
             latest technologies and deliver the best digital solutions. */}
-            My passion lies in the digital technology field, which motivates me
-            to keep learning, innovating, and creating meaningful contributions.
+            {t("banner.description")}
           </p>
           <button
             type="button"

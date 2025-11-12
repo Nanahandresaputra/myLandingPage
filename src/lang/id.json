@@ -1,0 +1,49 @@
+{
+  "navLink": {
+    "home": "Beranda",
+    "aboutMe": "Tantang Saya",
+    "portofolios": "Portofolio",
+    "contact": "Kontak"
+  },
+  "banner": {
+    "hiText": "Halo nam saya",
+    "description": "Minat saya terletak di bidang teknologi digital, yang memotivasi saya untuk terus belajar, berinovasi, dan memberikan kontribusi yang bermakna."
+  },
+  "aboutMe": {
+    "title": "Tentang Saya",
+    "description": "Saya lulusan Diploma Teknik Informatika dengan minat yang kuat dalam teknologi dan pengembangan perangkat lunak. Dengan pengalaman 2 tahun sebagai Frontend Developer, saya spesialis dalam menciptakan antarmuka interaktif, modern, dan ramah pengguna. Selain pengembangan frontend, saya juga antusias menjelajahi pengembangan Web dan Mobile, karena saya percaya teknologi menawarkan peluang tak terbatas untuk berinovasi dan menciptakan solusi yang bermakna. Didorong oleh rasa ingin tahu, pemikiran analitis, dan mindset belajar yang berkelanjutan, saya berkomitmen untuk menghadapi tantangan baru dan menghadirkan solusi digital yang berdampak."
+  },
+  "techStack": {
+    "title": "Teknologi yang digunakan"
+  },
+  "portofolios": {
+    "title": "Portofolio"
+  },
+  "contact": {
+    "lets": "Mari kita bicarakan",
+    "description": "Punya ide besar atau merek yang ingin dikembangkan dan butuh bantuan? Hubungi saya, saya senang mendengar tentang proyek Anda dan siap membantu.",
+    "form": {
+      "placeholder": {
+        "fullname": "Nama Lengkap",
+        "subject": "Subjek",
+        "message": "Pesan",
+        "btnText": "Kirim Pesan"
+      },
+      "validationMessage": {
+        "fullnameRequired": "Nama lengkap wajib diisi!",
+        "subjectRequired": "Subjek wajib diisi!",
+        "emailRequired": "Email wajib diisi!",
+        "emailValid": "Email must be a valid email",
+        "messageRequired": "Pesan wajib diisi!"
+      },
+      "emailSent": "Pesan telah dikirim."
+    },
+    "social": "Sosial"
+  },
+  "footer": {
+    "description": "Selalu belajar, selalu menciptakan — mengubah setiap tantangan menjadi peluang untuk tumbuh dan membangun solusi yang bermakna."
+  },
+  "otherKey": {
+    "description": "Deskripsi"
+  }
+}

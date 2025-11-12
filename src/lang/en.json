@@ -1,0 +1,49 @@
+{
+  "navLink": {
+    "home": "Home",
+    "aboutMe": "About Me",
+    "portofolios": "Portofolios",
+    "contact": "Contact"
+  },
+  "banner": {
+    "hiText": "Hi my name is",
+    "description": "My passion lies in the digital technology field, which motivates me to keep learning, innovating, and creating meaningful contributions."
+  },
+  "aboutMe": {
+    "title": "About Me",
+    "description": "I am a graduate of Diploma in Informatics Engineering with a strong interest in technology and software development. With 2 years of experience as a Frontend Developer, I specialize in creating interactive, modern, and user-friendly interfaces. Beyond frontend development, I am also passionate about exploring Web and Mobile development, as I believe technology provides endless opportunities to innovate and create meaningful solutions. Driven by curiosity, analytical thinking, and a continuous learning mindset, I am committed to taking on new challenges and delivering impactful digital solutions."
+  },
+  "techStack": {
+    "title": "Tech Stack"
+  },
+  "portofolios": {
+    "title": "Portofolios"
+  },
+  "contact": {
+    "lets": "Let's Talk",
+    "description": "Got a big idea or brand you want to develop and need help? Contact me, I'd love to hear about your project and am ready to help.",
+    "form": {
+      "placeholder": {
+        "fullname": "Fullname",
+        "subject": "Subject",
+        "message": "Message",
+        "btnText": "Send Message"
+      },
+      "validationMessage": {
+        "fullnameRequired": "Fullname is required!",
+        "subjectRequired": "Subject is required!",
+        "emailRequired": "Email is required!",
+        "emailValid": "Email must be a valid email",
+        "messageRequired": "Message is required!"
+      },
+      "emailSent": "The message has been sent."
+    },
+    "social": "Socials"
+  },
+  "footer": {
+    "description": "Always learning, always creating — turning every challenge into an opportunity to grow and build meaningful solutions."
+  },
+  "otherKey": {
+    "description": "Description"
+  }
+}

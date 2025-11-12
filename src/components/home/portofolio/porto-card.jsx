@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const PortoCard = ({ data }) => {
   const navigate = useNavigate();
+  const lang = sessionStorage.getItem("lang") ?? "EN";
   return (
     <section className="p-5 border border-black/20 dark:border-white/20 rounded-md bg-transparent bg-clip-padding backdrop-blur-md space-y-7">
       <img
@@ -16,7 +17,7 @@ const PortoCard = ({ data }) => {
           {data.title}
         </p>
         <p className="text-black/70 dark:text-white/70 text-justify line-clamp-3">
-          {data.description}
+          {lang === "ID" ? data.descriptionId : data.descriptionEn}
         </p>
       </div>
       <div className="flex justify-end">

@@ -2,6 +2,7 @@ import React, { createContext, useEffect, useState } from "react";
 import Navbar from "./navbar";
 import { Outlet } from "react-router-dom";
 import Footer from "./footer";
+import i18next from "../lang/i18next";
 
 export const GlobalContext = createContext({});
 

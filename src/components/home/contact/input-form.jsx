@@ -27,7 +27,9 @@ const InputText = ({
         } disabled:cursor-not-allowed disabled:opacity-50`}
       />
       {touched[field.name] && errors[field.name] && (
-        <span className="text-red-500">{errors[field.name]}</span>
+        <span className="text-red-500 text-xs md:text-base">
+          {errors[field.name]}
+        </span>
       )}
     </div>
   );

@@ -2,9 +2,11 @@ import React, { useContext } from "react";
 import { GlobalContext } from "../../../layout";
 import PortoCard from "./porto-card";
 import { portoListData } from "../../../data/porto-list";
+import { useTranslation } from "react-i18next";
 
 const Portofolio = () => {
   const { theme } = useContext(GlobalContext);
+  const { t } = useTranslation();
 
   return (
     <section
@@ -37,7 +39,7 @@ const Portofolio = () => {
       />
       <div className="container py-[10vh] 2xl:py-0 mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 max-w-7xl relative z-10 space-y-12">
         <p className="text-black dark:text-white font-bold text-3xl lg:text-5xl">
-          Portofolios
+          {t("portofolios.title")}
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {portoListData.map((data, index) => (

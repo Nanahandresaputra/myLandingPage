@@ -1,12 +1,16 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { GlobalContext } from "../../layout";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { FreeMode, Pagination } from "swiper/modules";
-import { portoListData } from "../../data/porto-list";
+import { FreeMode, Pagination, Navigation } from "swiper/modules";
 import { TbWorld } from "react-icons/tb";
-import { FaGithub, FaNodeJs } from "react-icons/fa";
+import {
+  FaChevronLeft,
+  FaChevronRight,
+  FaGithub,
+  FaNodeJs,
+} from "react-icons/fa";
 import {
   SiAntdesign,
   SiExpress,
@@ -20,6 +24,7 @@ import { RiTailwindCssFill } from "react-icons/ri";
 import { GrReactjs } from "react-icons/gr";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const PortoDetailPage = () => {
   const { theme } = useContext(GlobalContext);
@@ -98,11 +103,17 @@ const PortoDetailPage = () => {
     },
   ];
 
+  const { t } = useTranslation();
+
+  const lang = sessionStorage.getItem("lang") ?? "EN";
+
   const { state } = useLocation();
 
   const handleOpenInNewTab = (path) => {
     window.open(path, "_blank");
   };
+
+  const swiperRef = useRef();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -163,40 +174,80 @@ const PortoDetailPage = () => {
             </button>
           </div>
         </div>
-        <Swiper
-          breakpoints={{
-            320: {
-              slidesPerView: state.isMobile ? 2 : 1,
-            },
-            768: {
-              slidesPerView: state.isMobile ? 4 : 1,
-            },
-          }}
-          spaceBetween={20}
-          //   centeredSlides={true}
-          //   loop={true}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[FreeMode, Pagination]}
-          className="mySwiper"
-        >
-          {state.images.map((data, index) => (
-            <SwiperSlide className="w-full" key={index}>
-              <img src={data} className="h-full md:min-h-[40vh]" key={index} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+
+        <div className="relative">
+          <div className="absolute h-full left-0 flex items-center z-50">
+            <button
+              onClick={() => swiperRef.current?.slidePrev()}
+              className="rounded-full p-2 md:p-4 bg-white border-2 border-gray-400"
+            >
+              <FaChevronLeft className="text-black md:text-xl" />
+            </button>
+          </div>
+
+          <div className="absolute h-full right-0 flex items-center z-50">
+            <button
+              onClick={() => swiperRef.current?.slideNext()}
+              className="rounded-full p-2 md:p-4 bg-white border-2 border-gray-400 "
+            >
+              <FaChevronRight className="text-black md:text-xl" />
+            </button>
+          </div>
+
+          <div className="w-full flex justify-center">
+            <div className="w-[94%] md:w-[96%]">
+              <Swiper
+                breakpoints={{
+                  320: {
+                    slidesPerView: state.isMobile ? 2 : 1,
+                  },
+                  768: {
+                    slidesPerView: state.isMobile ? 3 : 1,
+                  },
+                  1000: {
+                    slidesPerView: state.isMobile ? 4 : 1,
+                  },
+                }}
+                spaceBetween={20}
+                centeredSlides={true}
+                //   loop={true}
+                pagination={{
+                  clickable: true,
+                  type: "progressbar",
+                }}
+                modules={[Pagination, Navigation]}
+                className="mySwiper"
+                onBeforeInit={(swiper) => {
+                  swiperRef.current = swiper;
+                }}
+                grabCursor={true}
+              >
+                {state.images.map((data, index) => (
+                  <SwiperSlide className="w-full" key={index}>
+                    <img
+                      src={data}
+                      className="h-full md:min-h-[40vh]"
+                      key={index}
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+          </div>
+        </div>
 
         <div className="space-y-4">
           <p className="text-black/70 dark:text-white/70 text-2xl md:text-3xl font-semibold">
-            Tech Stack
+            {t("techStack.title")}
           </p>
           <div className="flex items-center space-x-5">
             {techStackData
               .filter((data) => state.stack.includes(data.label))
-              .map((data) => (
-                <div className="flex flex-col items-center space-y-3">
+              .map((data, index) => (
+                <div
+                  className="flex flex-col items-center space-y-3"
+                  key={index}
+                >
                   {data.icon}
                   <p className="text-sm md:text-base text-black/70 dark:text-white/70">
                     {data.label}
@@ -208,10 +259,10 @@ const PortoDetailPage = () => {
 
         <div className="space-y-3">
           <p className="text-black/70 dark:text-white/70 text-2xl md:text-3xl font-semibold">
-            Description
+            {t("otherKey.description")}
           </p>
           <p className="text-black/70 dark:text-white/70 text-justify text-sm md:text-base ">
-            {state.description}
+            {lang === "ID" ? state.descriptionId : state.descriptionEn}
           </p>
         </div>
       </div>
@@ -220,3 +271,17 @@ const PortoDetailPage = () => {
 };
 
 export default PortoDetailPage;
+
+// import React from "react";
+// import { useSwiper } from "swiper/react";
+
+// export const SwiperNavButtons = () => {
+//   const swiper = useSwiper();
+
+//   return (
+// <div className="swiper-nav-btns">
+//   <button onClick={() => swiper.slidePrev()}>Prev</button>
+//   <button onClick={() => swiper.slideNext()}>Next</button>
+// </div>
+//   );
+// };

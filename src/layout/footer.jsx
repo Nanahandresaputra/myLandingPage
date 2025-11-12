@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { FaGithub, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
 import { TfiEmail } from "react-icons/tfi";
@@ -22,6 +23,8 @@ const Footer = () => {
       link: "google.com",
     },
   ];
+
+  const { t } = useTranslation();
 
   const location = useLocation();
 
@@ -58,10 +61,27 @@ const Footer = () => {
     }
   };
 
-  const navLinks = ["Home", "About Me", "Portofolios", "Contact"];
+  const navLinks = [
+    {
+      title: t("navLink.home"),
+      key: "Home",
+    },
+    {
+      title: t("navLink.aboutMe"),
+      key: "About Me",
+    },
+    {
+      title: t("navLink.portofolios"),
+      key: "Portofolios",
+    },
+    {
+      title: t("navLink.contact"),
+      key: "Contact",
+    },
+  ];
 
   return (
-    <footer className="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-900 dark:to-black text-gray-900 dark:text-white py-12 px-4 font-inter border-t border-gray-200 dark:border-gray-800">
+    <footer className="bg-gradient-to-r from-emerald-100 to-white dark:from-gray-900 dark:to-black text-gray-900 dark:text-white py-12 px-4 font-inter border-t border-gray-200 dark:border-gray-800">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 max-w-7xl flex flex-col md:flex-row justify-between space-y-5">
         <div className="w-full md:w-6/12 lg:w-4/12 space-y-4">
           <div className="flex items-center space-x-2">
@@ -69,9 +89,8 @@ const Footer = () => {
               Nana Handre Saputra
             </h3>
           </div>
-          <p className="text-gray-600 dark:text-gray-400 text-justify md:text-start text-sm leading-relaxed">
-            Always learning, always creating — turning every challenge into an
-            opportunity to grow and build meaningful solutions.
+          <p className="text-gray-600 dark:text-gray-400 text-justify md:text-start text-sm lg:text-base leading-relaxed">
+            {t("footer.description")}
           </p>
         </div>
         <div className="space-y-4">
@@ -82,15 +101,17 @@ const Footer = () => {
             <h3 className="text-xl md:text-2xl font-extrabold text-black/70 dark:text-white/70">
               Navigate
             </h3>
-            {navLinks.map((text, index) => (
-              <p
-                onClick={() => handleScroll(text)}
-                key={index}
-                className="hover:text-black dark:hover:text-white hover:cursor-pointer"
-              >
-                {text}
-              </p>
-            ))}
+            <div className="space-y-1 lg:space-y-3">
+              {navLinks.map((text, index) => (
+                <p
+                  onClick={() => handleScroll(text.key)}
+                  key={index}
+                  className="hover:text-black dark:hover:text-white hover:cursor-pointer text-sm lg:text-base"
+                >
+                  {text.title}
+                </p>
+              ))}
+            </div>
           </div>
         </div>
       </div>

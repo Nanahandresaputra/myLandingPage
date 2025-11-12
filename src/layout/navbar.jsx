@@ -5,12 +5,15 @@ import { LuSunMedium } from "react-icons/lu";
 import { MdClose } from "react-icons/md";
 import { GlobalContext } from ".";
 import { useLocation, useNavigate } from "react-router-dom";
+import FlagLangDropDown from "../components/utils/dropdown";
+import { useTranslation } from "react-i18next";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   // const [current, setCurrent] = useState("home");
 
   const { theme, setTheme } = useContext(GlobalContext);
+  const { t } = useTranslation();
 
   const location = useLocation();
 
@@ -80,7 +83,24 @@ const Navbar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const navLinks = ["Home", "About Me", "Portofolios", "Contact"];
+  const navLinks = [
+    {
+      title: t("navLink.home"),
+      key: "Home",
+    },
+    {
+      title: t("navLink.aboutMe"),
+      key: "About Me",
+    },
+    {
+      title: t("navLink.portofolios"),
+      key: "Portofolios",
+    },
+    {
+      title: t("navLink.contact"),
+      key: "Contact",
+    },
+  ];
 
   return (
     <header
@@ -110,18 +130,18 @@ const Navbar = () => {
           <nav className="hidden md:flex items-center space-x-4 lg:space-x-6 xl:space-x-8">
             {navLinks.map((text) => (
               <a
-                key={text}
-                onClick={() => handleScroll(text)}
+                key={text.key}
+                onClick={() => handleScroll(text.key)}
                 className="text-sm hover:cursor-pointer lg:text-base font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors relative group"
               >
-                {text}
+                {text.title}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gray-900 dark:bg-gray-100 transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
           </nav>
 
           {/* Desktop CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-2 lg:space-x-3">
+          <div className="hidden md:flex items-center space-x-2 lg:space-x-4">
             <button
               className="text-white dark:text-black text-xl"
               type="button"
@@ -133,6 +153,7 @@ const Navbar = () => {
                 <LuSunMedium className="text-black" />
               )}
             </button>
+            <FlagLangDropDown />
           </div>
 
           {/* Mobile Menu Button */}
@@ -151,35 +172,42 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          className={`md:hidden transition-all duration-300 ease-in-out ${
             isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="py-4 border-t border-gray-200 dark:border-gray-800">
-            <div className="flex flex-col space-y-1">
-              {navLinks.map((text) => (
-                <a
-                  key={text}
-                  onClick={() => {
-                    handleScroll(text);
-                    setIsMenuOpen(false);
-                  }}
-                  className="px-3 py-2.5 hover:cursor-pointer text-sm sm:text-base font-medium text-gray-600 dark:text-gray-300 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                >
-                  {text}
-                </a>
-              ))}
-              <div className="pt-4 mt-2 border-t border-gray-200 dark:border-gray-700 flex flex-col space-y-2">
-                <button className="text-xl" type="button" onClick={toggleTheme}>
-                  {theme === "dark" ? (
-                    <IoMoonOutline className="text-white" />
-                  ) : (
-                    <LuSunMedium className="text-black" />
-                  )}
-                </button>
+          {isMenuOpen && (
+            <div className="py-4 border-t border-gray-200 dark:border-gray-800">
+              <div className="flex flex-col space-y-1">
+                {navLinks.map((text) => (
+                  <a
+                    key={text.key}
+                    onClick={() => {
+                      handleScroll(text.key);
+                      setIsMenuOpen(false);
+                    }}
+                    className="px-3 py-2.5 hover:cursor-pointer text-sm sm:text-base font-medium text-gray-600 dark:text-gray-300 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                  >
+                    {text.key}
+                  </a>
+                ))}
+                <div className="pt-4 mt-2 border-t border-gray-200 dark:border-gray-700 flex flex-col items-start space-y-5">
+                  <button
+                    className="text-xl"
+                    type="button"
+                    onClick={toggleTheme}
+                  >
+                    {theme === "dark" ? (
+                      <IoMoonOutline className="text-white" />
+                    ) : (
+                      <LuSunMedium className="text-black" />
+                    )}
+                  </button>
+                  <FlagLangDropDown />
+                </div>
               </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </header>
