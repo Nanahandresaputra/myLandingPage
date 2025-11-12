@@ -148,10 +148,10 @@ const PortoDetailPage = () => {
               }),
         }}
       />
-      <div className="container py-[10vh] 2xl:py-0 mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 max-w-7xl relative z-10 space-y-12">
+      <div className="container py-[4vh] md:py-0 lg:py-[10vh] 2xl:py-0 mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 max-w-7xl relative z-10 space-y-12">
         <div className="space-y-5">
           <p
-            className={`text-black dark:text-white font-semibold text-4xl md:text-5xl`}
+            className={`text-black dark:text-white font-semibold text-3xl md:text-5xl`}
           >
             {state.title}
           </p>

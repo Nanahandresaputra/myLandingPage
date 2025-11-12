@@ -10,7 +10,7 @@ const Portofolio = () => {
 
   return (
     <section
-      className="min-h-screen py-[5vh] w-full bg-white dark:bg-[#020617] relative flex flex-col justify-center"
+      className="min-h-screen lg:py-[5vh] w-full bg-white dark:bg-[#020617] relative flex flex-col justify-center"
       id="Portofolios"
     >
       <div

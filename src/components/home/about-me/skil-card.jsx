@@ -90,7 +90,7 @@ const SkillsCard = () => {
   ];
 
   return (
-    <section className="grid grid-cols-3 md:grid-cols-6 gap-5">
+    <section className="grid grid-cols-3 md:grid-cols-6 gap-1.5 md:gap-5">
       {logos.map((data, index) => (
         <div
           className="py-7 rounded-md  dark:bg-white/20 bg-black/10 flex flex-col items-center space-y-4"

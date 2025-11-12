@@ -56,11 +56,7 @@ const HomeBanner = () => {
             className="text-4xl font-bold lg:text-5xl"
             text="Software Developer"
           />
-          <p className=" text-black/60 dark:text-white/60 text-justify text-lg md:text-xl">
-            {/* I am passionate about IT and programming, focusing on web and mobile
-            development. I enjoy building modern, interactive, and user-friendly
-            applications while continuously learning to stay updated with the
-            latest technologies and deliver the best digital solutions. */}
+          <p className=" text-black/60 dark:text-white/60 text-justify text-sm md:text-xl">
             {t("banner.description")}
           </p>
           <button
