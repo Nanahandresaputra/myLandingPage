@@ -1,15 +1,4 @@
-import {
-  bannerGoe,
-  bannerRadioStream,
-  compProAssets,
-  fquizAssets,
-  gameBaseAssets,
-  goeApiAssets,
-  goeAppAssets,
-  netmoviesAssets,
-  nnNextAiAssets,
-  radioStreamAssets,
-} from "../assets";
+import { bannerGoe, bannerRadioStream, compProAssets, fquizAssets, gameBaseAssets, goeApiAssets, goeAppAssets, goeCmsAssets, netmoviesAssets, nnNextAiAssets, radioStreamAssets } from "../assets";
 
 export const portoListData = [
   {
@@ -71,6 +60,17 @@ export const portoListData = [
     descriptionId:
       'Website ini adalah proyek landing page profesional yang dirancang untuk sebuah perusahaan (Lorem Ipsum Company) dengan fokus utama menyediakan solusi untuk meningkatkan income dan memperluas jaringan bisnis. Antarmuka dibangun dengan desain yang bersih dan responsive, didominasi oleh skema warna biru korporat, yang mengarahkan perhatian pada headline utama dan ilustrasi isometrik yang menggambarkan teknologi dan kolaborasi tim. Secara teknis, website ini berfungsi sebagai representasi digital perusahaan, menampilkan navigasi yang jelas (Beranda, Tentang Kami, Produk) dan menyajikan informasi detail tentang perusahaan dan produknya di bagian bawah halaman. Implementasi ini menunjukkan keahlian dalam membangun struktur website statis atau dinamis yang efektif untuk tujuan pemasaran dan branding, dengan call-to-action yang jelas ("Join Sekarang" dan "Play video") untuk mendorong interaksi pengguna.',
     descriptionEn: `This website is a professional landing page project designed for a company (Lorem Ipsum Company) with a primary focus on providing solutions to increase income and expand business networks. The interface is built with a clean and responsive design, dominated by a corporate blue color scheme, which directs attention to the main headline and isometric illustrations depicting technology and team collaboration. Technically, this website serves as a digital representation of the company, featuring clear navigation (Home, About Us, Products) and presenting detailed information about the company and its products at the bottom of the page. This implementation demonstrates expertise in building effective static or dynamic website structures for marketing and branding purposes, with clear calls-to-action (“Join Now” and “Play video”) to encourage user interaction.`,
+  },
+  {
+    banner: goeCmsAssets[0],
+    images: goeCmsAssets,
+    title: "GoEventID CMS",
+    stack: ["Javascript", "React.js", "Ant Design", "Tailwindcss"],
+    link: "https://go-event-id-cms.vercel.app/",
+    github: "https://github.com/Nanahandresaputra/goEventId-cms.git",
+    descriptionId:
+      "GoEventID CMS adalah Sistem Manajemen Konten (CMS) terpadu yang berfungsi sebagai pusat kendali bagi Administrator untuk mengelola seluruh siklus hidup acara. Aplikasi ini memungkinkan pengguna untuk mengatur dan mempublikasikan detail acara secara lengkap, mengelola database para penyelenggara (event organizer), dan mengurus manajemen pengguna sistem dengan penetapan peran yang jelas. Fitur intinya terletak pada modul Pelaporan Penjualan yang menyediakan ringkasan total pendapatan dan rincian penjualan tiket per kategori secara real-time, sehingga Administrator dapat memantau performa penjualan, ketersediaan kuota, dan status keuangan setiap acara secara efisien dan terpusat.",
+    descriptionEn: `GoEventID CMS is an integrated Content Management System (CMS) that serves as a control center for Administrators to manage the entire event lifecycle. This application allows users to organize and publish complete event details, manage the event organizer database, and manage system users with clearly defined roles. Its core feature lies in the Sales Reporting module, which provides real-time summaries of total revenue and ticket sales details by category, allowing Administrators to efficiently and centrally monitor sales performance, quota availability, and the financial status of each event.`,
   },
   {
     banner: nnNextAiAssets[0],

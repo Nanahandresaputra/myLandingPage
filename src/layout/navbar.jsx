@@ -26,8 +26,7 @@ const Navbar = () => {
       const element = document.getElementById(e);
       const headerOffset = 90;
       const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition =
-        elementPosition + window.pageYOffset - headerOffset;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
       window.scrollTo({
         top: offsetPosition,
@@ -39,8 +38,7 @@ const Navbar = () => {
         const element = document.getElementById(e);
         const headerOffset = 90;
         const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition =
-          elementPosition + window.pageYOffset - headerOffset;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
         window.scrollTo({
           top: offsetPosition,
@@ -105,25 +103,21 @@ const Navbar = () => {
   return (
     <header
       className={`w-full transition-all duration-300 ${
-        isScrolled
-          ? "bg-white/70 dark:bg-gray-900/70 backdrop-blur-lg shadow-lg"
-          : "bg-white dark:bg-gray-900 backdrop-blur-md"
+        isScrolled ? "bg-white/70 dark:bg-gray-900/70 backdrop-blur-lg shadow-lg" : "bg-white dark:bg-gray-900 backdrop-blur-md"
       } border-b border-gray-200 dark:border-gray-800 sticky top-0 z-50 w-full`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 max-w-7xl">
         <div className="flex h-14 sm:h-16 lg:h-20 items-center justify-between">
           {/* Logo and Name */}
           <div className="flex items-center">
-            <a href="#" className="flex items-center space-x-2 group">
+            <div className="flex items-center space-x-2 group" onClick={() => handleScroll("Home")}>
               <div className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 bg-gray-900 dark:bg-gray-50 rounded-full flex items-center justify-center transition-transform group-hover:scale-110">
-                <span className="text-white dark:text-gray-900 font-bold text-base sm:text-lg lg:text-xl">
-                  N
-                </span>
+                <span className="text-white dark:text-gray-900 font-bold text-base sm:text-lg lg:text-xl">N</span>
               </div>
               {/* <span className="font-bold text-lg sm:text-xl lg:text-2xl text-gray-900 dark:text-gray-100">
                 Nn Dev
               </span> */}
-            </a>
+            </div>
           </div>
 
           {/* Desktop Navigation */}
@@ -142,40 +136,20 @@ const Navbar = () => {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center space-x-2 lg:space-x-4">
-            <button
-              className="text-white dark:text-black text-xl"
-              type="button"
-              onClick={toggleTheme}
-            >
-              {theme === "dark" ? (
-                <IoMoonOutline className="text-white" />
-              ) : (
-                <LuSunMedium className="text-black" />
-              )}
+            <button className="text-white dark:text-black text-xl" type="button" onClick={toggleTheme}>
+              {theme === "dark" ? <IoMoonOutline className="text-white" /> : <LuSunMedium className="text-black" />}
             </button>
             <FlagLangDropDown />
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors"
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? (
-              <MdClose className="h-5 w-5 sm:h-6 sm:w-6" />
-            ) : (
-              <HiMenuAlt3 className="h-5 w-5 sm:h-6 sm:w-6" />
-            )}
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden p-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors" aria-label="Toggle menu">
+            {isMenuOpen ? <MdClose className="h-5 w-5 sm:h-6 sm:w-6" /> : <HiMenuAlt3 className="h-5 w-5 sm:h-6 sm:w-6" />}
           </button>
         </div>
 
         {/* Mobile Menu */}
-        <div
-          className={`md:hidden transition-all duration-300 ease-in-out ${
-            isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-          }`}
-        >
+        <div className={`md:hidden transition-all duration-300 ease-in-out ${isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}>
           {isMenuOpen && (
             <div className="py-4 border-t border-gray-200 dark:border-gray-800">
               <div className="flex flex-col space-y-1">
@@ -192,16 +166,8 @@ const Navbar = () => {
                   </a>
                 ))}
                 <div className="pt-4 mt-2 border-t border-gray-200 dark:border-gray-700 flex flex-col items-start space-y-5">
-                  <button
-                    className="text-xl"
-                    type="button"
-                    onClick={toggleTheme}
-                  >
-                    {theme === "dark" ? (
-                      <IoMoonOutline className="text-white" />
-                    ) : (
-                      <LuSunMedium className="text-black" />
-                    )}
+                  <button className="text-xl" type="button" onClick={toggleTheme}>
+                    {theme === "dark" ? <IoMoonOutline className="text-white" /> : <LuSunMedium className="text-black" />}
                   </button>
                   <FlagLangDropDown />
                 </div>
