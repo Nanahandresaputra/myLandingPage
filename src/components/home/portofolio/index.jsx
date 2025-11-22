@@ -1,18 +1,18 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { GlobalContext } from "../../../layout";
 import PortoCard from "./porto-card";
 import { portoListData } from "../../../data/porto-list";
 import { useTranslation } from "react-i18next";
+import Tabs from "../../utils/tabs";
+import { GradientTabsDemo } from "../../utils/gradient-tabs";
 
 const Portofolio = () => {
   const { theme } = useContext(GlobalContext);
   const { t } = useTranslation();
+  const [category, setCategory] = useState("All");
 
   return (
-    <section
-      className="min-h-screen lg:py-[5vh] w-full bg-white dark:bg-[#020617] relative flex flex-col justify-center"
-      id="Portofolios"
-    >
+    <section className="min-h-screen lg:py-[5vh] w-full bg-white dark:bg-[#020617] relative flex flex-col " id="Portofolios">
       <div
         className="absolute inset-0 z-0"
         style={{
@@ -38,13 +38,16 @@ const Portofolio = () => {
         }}
       />
       <div className="container py-[10vh] 2xl:py-0 mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 max-w-7xl relative z-10 space-y-12">
-        <p className="text-black dark:text-white font-bold text-3xl lg:text-5xl">
-          {t("portofolios.title")}
-        </p>
+        <p className="text-black dark:text-white font-bold text-3xl lg:text-5xl">{t("portofolios.title")}</p>
+        <div>
+          <GradientTabsDemo onChange={(id) => setCategory(id)} />
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {portoListData.map((data, index) => (
-            <PortoCard key={index} data={data} />
-          ))}
+          {portoListData
+            .filter((data) => (category === "All" ? data : data.category === category))
+            .map((data, index) => (
+              <PortoCard key={index} data={data} />
+            ))}
           {/* {[...new Array(6)].map((_, idx) => (
             <PortoCard key={idx} />
           ))} */}

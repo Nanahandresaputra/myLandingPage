@@ -2,6 +2,7 @@ import { bannerGoe, bannerRadioStream, compProAssets, fquizAssets, gameBaseAsset
 
 export const portoListData = [
   {
+    category: "Mobile",
     isMobile: true,
     banner: bannerGoe,
     images: goeAppAssets,
@@ -15,6 +16,7 @@ export const portoListData = [
       "GoEventID is a mobile application project developed to provide a comprehensive event ticket booking platform, covering everything from large-scale concerts to theater performances. The application integrates a secure user authentication flow (Login/Registration) and displays a dynamic list of events that can be filtered by category and equipped with complete event details, including descriptions, locations, and seat layout visualizations. Technically, this project stands out through its robust integration of third-party payment gateways (such as Midtrans), enabling seamless, real-time transactions with support for various payment methods (Virtual Account, E-Wallet, Credit Card). After purchase, the application stores and displays all transactions in a structured Order History module. The application also includes Customer Service functionality for 24/7 support and simple Account Management, ensuring an efficient, reliable, and end-to-end user experience.",
   },
   {
+    category: "Mobile",
     isMobile: true,
     banner: bannerRadioStream,
     images: radioStreamAssets,
@@ -27,6 +29,7 @@ export const portoListData = [
     descriptionEn: `OnRadio Stream is a radio streaming app that turns your phone into a global radio receiver. This app allows you to listen to thousands of web radio stations from around the world, covering a wide range of genres from Pop, Rock, Jazz, to news and sports programs, all delivered with crystal-clear audio quality. With a clean and intuitive interface, you can easily search for stations by name, genre, or location, and save your favorite channels to a special list for easy access later. Whether you're looking for lullaby music, the latest news updates, or talk shows from other countries, OnRadio Stream is a free and practical solution for unlimited radio listening, anytime and anywhere you are.`,
   },
   {
+    category: "Frontend",
     banner: fquizAssets[0],
     images: fquizAssets,
     title: "Fun Quiz",
@@ -39,6 +42,7 @@ export const portoListData = [
       "FUN QUIZ is a dynamic web application project developed to provide an entertaining and educational interactive quiz platform. The application is designed with a clean, user-centered interface, allowing users to customize their quiz experience by selecting question categories and difficulty levels before starting a session. The application implements powerful front-end logic to retrieve and display questions sequentially and manage user answer states in real time. After the quiz is completed, users are presented with a comprehensive results page displaying their total score, the number of correct answers, and incorrect answers. The entire project serves as an effective demonstration of the ability to build a single-page application (SPA) with a clearly defined user flow and efficient scoring mechanism to provide instant feedback.",
   },
   {
+    category: "Frontend",
     banner: netmoviesAssets[0],
     images: netmoviesAssets,
     title: "NETMOVIES",
@@ -51,6 +55,7 @@ export const portoListData = [
       "NETMOVIES is a web application project that functions as a directory and catalog of movies and TV shows, featuring a modern interface design with a dark theme resembling popular streaming services. The application highlights front-end development capabilities to build an attractive home page with a large banner and intuitive search bar, as well as a List Movies page that displays a list of movie posters in a responsive grid layout. Technically, this project implements dynamic data retrieval through integration with movie APIs (such as TMDB), enabling the application to present complete details for each title, including synopses (Overview) as seen on the movie detail page. This application effectively demonstrates expertise in handling and presenting external data, creating a seamless navigation experience, and building an immersive visual design focused on media content.",
   },
   {
+    category: "Frontend",
     banner: compProAssets[0],
     images: compProAssets,
     title: "Company Profile",
@@ -62,6 +67,7 @@ export const portoListData = [
     descriptionEn: `This website is a professional landing page project designed for a company (Lorem Ipsum Company) with a primary focus on providing solutions to increase income and expand business networks. The interface is built with a clean and responsive design, dominated by a corporate blue color scheme, which directs attention to the main headline and isometric illustrations depicting technology and team collaboration. Technically, this website serves as a digital representation of the company, featuring clear navigation (Home, About Us, Products) and presenting detailed information about the company and its products at the bottom of the page. This implementation demonstrates expertise in building effective static or dynamic website structures for marketing and branding purposes, with clear calls-to-action (“Join Now” and “Play video”) to encourage user interaction.`,
   },
   {
+    category: "Frontend",
     banner: goeCmsAssets[0],
     images: goeCmsAssets,
     title: "GoEventID CMS",
@@ -73,6 +79,7 @@ export const portoListData = [
     descriptionEn: `GoEventID CMS is an integrated Content Management System (CMS) that serves as a control center for Administrators to manage the entire event lifecycle. This application allows users to organize and publish complete event details, manage the event organizer database, and manage system users with clearly defined roles. Its core feature lies in the Sales Reporting module, which provides real-time summaries of total revenue and ticket sales details by category, allowing Administrators to efficiently and centrally monitor sales performance, quota availability, and the financial status of each event.`,
   },
   {
+    category: "Frontend",
     banner: nnNextAiAssets[0],
     images: nnNextAiAssets,
     title: "Nn Next-Ai",
@@ -84,6 +91,7 @@ export const portoListData = [
     descriptionEn: `Nn-Next AI is a web application project that functions as an artificial intelligence-powered conversational interface (chatbot), designed to provide in-depth and structured information on various topics, such as UNESCO World Heritage Sites. The application features a modern and minimalist dark mode design, creating an immersive experience. Technically, this project demonstrates expertise in AI backend integration (possibly through a large language model API) to process user input and generate relevant responses. The application implements a responsive chat interface with a clear question input bar and a response display area that can present answers in a list format and organized text, while also demonstrating the ability to trigger structured conversation flows by providing users with initial topic options.`,
   },
   {
+    category: "Frontend",
     banner: gameBaseAssets[0],
     images: gameBaseAssets,
     title: "GameBase",
@@ -94,6 +102,7 @@ export const portoListData = [
     descriptionEn: `GameBase is a web application project that serves as a comprehensive information and review portal in the gaming world, featuring a premium and professional dark mode design. This application was built to provide three main functions: Game Catalog, News and Reviews, and Company Information. Technically, the website demonstrates its ability to handle and visualize extensive game data, displaying a list of games that can be filtered by various categories (Action, RPG, Strategy, etc.) as well as rich media game detail pages, including synopses, ratings, genres, release platforms, and video trailers. Additionally, this project has a separate news and review module, allowing users to stay up-to-date with the latest structured game articles and reviews, complete with individual article pages featuring relevant text, images, and video content. This application effectively demonstrates expertise in external data API integration, search and filtering feature implementation, and the creation of an elegant and informative front-end content management system (CMS).`,
   },
   {
+    category: "Backend",
     banner: goeApiAssets[0],
     images: goeApiAssets,
     title: "GoEventID API",
