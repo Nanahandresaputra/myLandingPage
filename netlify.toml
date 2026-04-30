@@ -4,9 +4,3 @@
   status = 301
   force = true
 
-[[headers]]
-  for = "/*"
-  [headers.conditions]
-    Host = "nanahandresaputra.netlify.app"
-  [headers.values]
-    X-Robots-Tag = "noindex, nofollow"
