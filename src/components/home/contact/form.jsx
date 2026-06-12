@@ -6,6 +6,7 @@ import * as Yup from "yup";
 import { Field, Form, Formik } from "formik";
 import Spinner from "../../utils/spin/loading-spinner";
 import { useTranslation } from "react-i18next";
+import { configEnv } from "../../../config/config";
 
 const FormContact = () => {
   const { t } = useTranslation();
@@ -52,8 +53,8 @@ const FormContact = () => {
           setIsLoadingSubmit(true);
           setErrMssgEmail(null);
           emailjs
-            .sendForm("service_cvqw7zb", "template_y02dzea", form.current, {
-              publicKey: "ka1Mr-PS_UCaXi4Ni",
+            .sendForm(configEnv.emailJsServiceID, configEnv.emailJsTemplate, form.current, {
+              publicKey: configEnv.emailJsPublicKEy,
             })
             .then(
               () => {
